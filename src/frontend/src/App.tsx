@@ -7,6 +7,7 @@ import {
   AlertCircle,
   CheckCircle,
   ChevronRight,
+  Download,
   Loader2,
   Mail,
   MapPin,
@@ -16,11 +17,16 @@ import {
 } from "lucide-react";
 import { AnimatePresence, motion, useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { SiFacebook, SiInstagram, SiWhatsapp, SiYoutube } from "react-icons/si";
 import { toast } from "sonner";
 import { useSubmitInquiry } from "./hooks/useQueries";
 
 const LOGO = "https://aewblowers.com/wp-content/uploads/2019/02/NEW_LOGO.png";
 const HERO_BG = "https://aewblowers.com/wp-content/uploads/2018/09/slide3.jpg";
+const CATALOGUE_URL =
+  "https://drive.google.com/file/d/15Sk_usb4lG1Gk1N-neBaSgaatbtYBFhV/view?usp=drivesdk";
+const WHATSAPP_URL = "https://wa.me/919466675482";
+
 const PRODUCTS = [
   {
     img: "https://aewblowers.com/wp-content/uploads/2024/05/20240512_075657.jpg",
@@ -154,6 +160,7 @@ export default function App() {
 
   const navLinks = [
     { label: "Home", href: "#home", ocid: "nav.home.link" },
+    { label: "About Us", href: "#about", ocid: "nav.about.link" },
     { label: "Products", href: "#products", ocid: "nav.products.link" },
     {
       label: "Applications",
@@ -219,11 +226,21 @@ export default function App() {
                   {link.label}
                 </a>
               ))}
+              <a
+                href={CATALOGUE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-ocid="catalogue.download_button"
+                className="ml-2 flex items-center gap-2 px-4 py-2 bg-white text-xs font-bold tracking-wider uppercase transition-all hover:bg-gray-100"
+                style={{ color: "#CC0000" }}
+              >
+                <Download className="w-3.5 h-3.5" />
+                Catalogue
+              </a>
               <button
                 type="button"
                 onClick={() => scrollTo("#contact")}
-                className="ml-4 px-6 py-2 bg-white text-sm font-bold tracking-wider uppercase transition-all hover:bg-gray-100"
-                style={{ color: "#CC0000" }}
+                className="ml-2 px-6 py-2 bg-white/10 border border-white/40 text-white text-sm font-bold tracking-wider uppercase transition-all hover:bg-white/20"
               >
                 Get Quote
               </button>
@@ -269,6 +286,17 @@ export default function App() {
                     {link.label}
                   </a>
                 ))}
+                <a
+                  href={CATALOGUE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-ocid="catalogue.download_button"
+                  className="flex items-center gap-2 mx-4 my-2 px-4 py-3 bg-white text-sm font-bold tracking-wider uppercase"
+                  style={{ color: "#CC0000" }}
+                >
+                  <Download className="w-4 h-4" />
+                  Download Catalogue
+                </a>
               </div>
             </motion.div>
           )}
@@ -375,6 +403,21 @@ export default function App() {
               >
                 Contact Us
               </button>
+              <a
+                href={CATALOGUE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-ocid="catalogue.download_button"
+                className="flex items-center gap-2 px-8 py-4 font-bold tracking-widest uppercase text-sm border-2 transition-all hover:scale-105"
+                style={{
+                  color: "#CC0000",
+                  backgroundColor: "white",
+                  borderColor: "white",
+                }}
+              >
+                <Download className="w-4 h-4" />
+                Download Catalogue
+              </a>
             </motion.div>
 
             <motion.div
@@ -431,6 +474,153 @@ export default function App() {
           className="absolute inset-0"
           style={{
             background: "linear-gradient(135deg, #0D0D0D 50%, #CC0000 50%)",
+          }}
+        />
+      </div>
+
+      {/* ABOUT US */}
+      <section
+        id="about"
+        className="py-24 relative overflow-hidden"
+        style={{ backgroundColor: "#CC0000" }}
+      >
+        <div className="absolute inset-0 industrial-grid opacity-10" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn className="mb-16">
+            <div
+              className="inline-block text-xs font-bold tracking-[0.4em] uppercase px-4 py-1 mb-6 bg-white"
+              style={{ color: "#CC0000" }}
+            >
+              Company Profile
+            </div>
+            <h2
+              className="font-display font-extrabold leading-none tracking-tight text-white"
+              style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
+            >
+              ABOUT{" "}
+              <span
+                className="font-display font-extrabold"
+                style={{ WebkitTextStroke: "2px white", color: "transparent" }}
+              >
+                US
+              </span>
+            </h2>
+            <div className="mt-4 w-24 h-1 bg-white" />
+          </FadeIn>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Left: text */}
+            <FadeIn>
+              <p className="text-white/90 text-lg leading-relaxed mb-8">
+                AEW Blowers is a highly reputable company specializing in the
+                manufacturing &amp; distribution of high quality root blowers
+                along with its spares and accessories. With over 4 decades of
+                industry experience of our director, we have established
+                ourselves in 2007, supplying root blowers, its spare parts and
+                standard accessories that meet the diverse need of various
+                industries.
+              </p>
+              <p className="text-white/80 leading-relaxed mb-8">
+                Our state-of-art manufacturing facility is equipped with latest
+                CNC, VMC machines &amp; operated by a team of skilled engineers
+                &amp; technicians. We adhere to stringent quality control
+                processes to ensure that every root blower manufactured adheres
+                to the highest standards of quality, reliability &amp;
+                performance.
+              </p>
+              <p className="text-white/80 leading-relaxed mb-10">
+                Our root blowers are designed to minimize the energy consumption
+                &amp; reduce carbon footprints, contributing to a cleaner and
+                greener future. As a customer-centric company, we value
+                long-term partnerships &amp; strive to build strong
+                relationships with our clients.
+              </p>
+
+              {/* Director */}
+              <div className="flex items-center gap-5 border-t border-white/20 pt-8">
+                <div
+                  className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-white/10 border-2 border-white/30"
+                  style={{ fontSize: 28 }}
+                >
+                  👤
+                </div>
+                <div>
+                  <div className="font-display font-bold text-white text-lg leading-tight">
+                    Sh. Balwan Singh Ahlawat
+                  </div>
+                  <div className="text-white/60 text-sm tracking-widest uppercase mt-1">
+                    Company Director
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Right: highlights */}
+            <FadeIn delay={0.2}>
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {[
+                  { icon: "🏭", value: "Est. 2007", label: "Year Founded" },
+                  {
+                    icon: "📅",
+                    value: "4+ Decades",
+                    label: "Director's Experience",
+                  },
+                  {
+                    icon: "🤝",
+                    value: "500+ Clients",
+                    label: "Served Pan-India",
+                  },
+                  {
+                    icon: "📍",
+                    value: "6 Offices",
+                    label: "Across India",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="p-6 bg-white/10 border border-white/20 hover:bg-white/15 transition-colors"
+                  >
+                    <div className="text-3xl mb-3">{item.icon}</div>
+                    <div className="font-display font-extrabold text-2xl text-white leading-none mb-1">
+                      {item.value}
+                    </div>
+                    <div className="text-white/60 text-xs tracking-widest uppercase">
+                      {item.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-white/10 border border-white/20 p-6">
+                <div className="text-white/60 text-xs font-bold tracking-widest uppercase mb-4">
+                  Core Strengths
+                </div>
+                <div className="space-y-3">
+                  {[
+                    "CNC & VMC Precision Manufacturing",
+                    "Stringent Quality Control Processes",
+                    "Energy-Efficient Blower Designs",
+                    "In-House Customization Capability",
+                    "Pan-India Service Network",
+                  ].map((strength) => (
+                    <div key={strength} className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-white flex-shrink-0" />
+                      <span className="text-white/85 text-sm">{strength}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* DIAGONAL: red -> white */}
+      <div className="h-16 relative overflow-hidden bg-white">
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(135deg, #CC0000 50%, white 50%)",
           }}
         />
       </div>
@@ -1016,12 +1206,60 @@ export default function App() {
               </div>
             </div>
           </div>
+
+          {/* Social Media Icons */}
+          <div className="mt-8 flex justify-center gap-4">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-green-600 text-white/60 hover:text-white transition-all duration-200"
+            >
+              <SiWhatsapp className="w-5 h-5" />
+            </a>
+            <a
+              href="#youtube"
+              aria-label="YouTube"
+              className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-red-600 text-white/60 hover:text-white transition-all duration-200"
+            >
+              <SiYoutube className="w-5 h-5" />
+            </a>
+            <a
+              href="#instagram"
+              aria-label="Instagram"
+              className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-pink-600 text-white/60 hover:text-white transition-all duration-200"
+            >
+              <SiInstagram className="w-5 h-5" />
+            </a>
+            <a
+              href="#facebook"
+              aria-label="Facebook"
+              className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-blue-600 text-white/60 hover:text-white transition-all duration-200"
+            >
+              <SiFacebook className="w-5 h-5" />
+            </a>
+          </div>
+
           <div
             className="mt-8 h-1 w-full"
             style={{ backgroundColor: "#CC0000" }}
           />
         </div>
       </footer>
+
+      {/* FLOATING WHATSAPP BUTTON */}
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-ocid="whatsapp.button"
+        aria-label="Chat on WhatsApp"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 flex items-center justify-center shadow-2xl transition-all duration-200 hover:scale-110"
+        style={{ backgroundColor: "#25D366" }}
+      >
+        <SiWhatsapp className="w-7 h-7 text-white" />
+      </a>
     </div>
   );
 }
