@@ -21,7 +21,7 @@ import { SiFacebook, SiInstagram, SiWhatsapp, SiYoutube } from "react-icons/si";
 import { toast } from "sonner";
 import { useSubmitInquiry } from "./hooks/useQueries";
 
-const LOGO = "https://aewblowers.com/wp-content/uploads/2019/02/NEW_LOGO.png";
+const LOGO = "/assets/uploads/IMG-20250428-WA0003-removebg-preview-1.png";
 const HERO_BG = "https://aewblowers.com/wp-content/uploads/2018/09/slide3.jpg";
 const CATALOGUE_URL =
   "https://drive.google.com/file/d/15Sk_usb4lG1Gk1N-neBaSgaatbtYBFhV/view?usp=drivesdk";
