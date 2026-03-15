@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200;12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 100 0 0;
+    --foreground: 18 2 260;
+    --card: 100 0 0;
+    --card-foreground: 18 2 260;
+    --popover: 100 0 0;
+    --popover-foreground: 18 2 260;
+    --primary: 42 0.23 29;
+    --primary-foreground: 100 0 0;
+    --secondary: 95 0.005 260;
+    --secondary-foreground: 18 2 260;
+    --muted: 96 0.005 260;
+    --muted-foreground: 52 0.04 260;
+    --accent: 42 0.23 29;
+    --accent-foreground: 100 0 0;
+    --destructive: 42 0.23 29;
+    --destructive-foreground: 100 0 0;
+    --border: 90 0.005 260;
+    --input: 90 0.005 260;
+    --ring: 42 0.23 29;
+    --radius: 0rem;
+    --chart-1: 42 0.23 29;
+    --chart-2: 52 0.15 29;
+    --chart-3: 62 0.1 29;
+    --chart-4: 72 0.06 29;
+    --chart-5: 82 0.03 29;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    overflow-x: hidden;
+  }
+
+  * {
+    @apply border-border;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+
+  .clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  .clip-diagonal-reverse {
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+  }
+
+  .clip-diagonal-both {
+    clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
+  }
+
+  .text-stroke {
+    -webkit-text-stroke: 2px currentColor;
+    color: transparent;
+  }
+
+  .industrial-grid {
+    background-image: linear-gradient(
+        oklch(100 0 0 / 0.03) 1px,
+        transparent 1px
+      ), linear-gradient(90deg, oklch(100 0 0 / 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
